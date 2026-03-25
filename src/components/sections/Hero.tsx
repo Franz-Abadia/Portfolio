@@ -58,16 +58,12 @@ export function Hero() {
           </h1>
 
           {/* Sub-copy — matching original site */}
-          <p className="mt-8 text-lg leading-relaxed text-muted-foreground md:text-xl">
-            You&apos;re possibly here for two reasons:
-          </p>
+          
           <p className="mt-3 text-lg leading-relaxed text-foreground md:text-xl">
-            You <span className="font-semibold text-gold">VALUE</span> your time, and you{" "}
-            <span className="font-semibold text-gold">NEED</span> a copywriter.
+            You <span className="font-semibold italic text-gold">VALUE</span> your time, and you{" "}
+            <span className="font-semibold italic text-gold">NEED</span> a copywriter.
           </p>
-          <p className="mt-3 text-base leading-relaxed text-muted-foreground md:text-lg">
-            In that case, I got you!
-          </p>
+          
 
           {/* CTA buttons */}
           <div className="mt-12 flex flex-wrap items-center gap-5">
