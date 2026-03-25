@@ -4,7 +4,7 @@
 import { Resend } from 'resend';
 
 // ⚠️ REPLACE 're_xxxxxxxxx' with your real API key
-const resend = new Resend('re_xxxxxxxxx');
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendEmail(formData: {
   firstName: string;
