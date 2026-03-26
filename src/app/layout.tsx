@@ -17,14 +17,59 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Franz Abadia -Copywriter",
+  metadataBase: new URL("https://tonywrites.net"),
+
+  title: {
+    default: "Franz Abadia | Conversion-Focused Copywriter",
+    template: "%s | Franz Abadia",
+  },
   description:
-    "I write landing pages, email sequences, and sales copy that turn browsers into buyers. You VALUE your time, and you NEED a copywriter. In that case, I got you!",
+    "High-converting landing pages, email sequences, and sales copy that turn browsers into buyers. Strategic copywriting for results-driven brands.",
+  
+  keywords: ["Copywriter", "Franz Abadia", "Tony Writes", "Conversion Copywriting", "Landing Page Specialist", "Email Marketing", "Sales Copy"],
+  
+  icons: {
+    icon: "/FranzHero.png", 
+    apple: "/FranzHero.png",
+  },
   openGraph: {
-    title: "Franz Abadia -Copywriter",
-    description:
-      "I write landing pages, email sequences, and sales copy that turn browsers into buyers. You VALUE your time, and you NEED a copywriter. In that case, I got you!",
+    title: "Franz Abadia | Conversion-Focused Copywriter",
+    description: "I help brands scale revenue through psychology-driven copy and strategic narratives.",
+    url: "https://tonywrites.net",
+    siteName: "Tony Writes | Franz Abadia",
+    locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/FranzHero.png",
+        width: 1200,
+        height: 630,
+        alt: "Franz Abadia - Conversion Copywriter",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Franz Abadia | Copywriter",
+    description: "Turning browsers into buyers with strategic copy.",
+    images: ["/FranzHero.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  alternates: {
+    canonical: "https://tonywrites.net",
   },
 };
 

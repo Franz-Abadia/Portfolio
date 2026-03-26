@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Franz | The Digital Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#002e6a",
+              "tertiary-fixed-dim": "#adc6ff",
+              "surface-container-high": "#222a3d",
+              "on-secondary-fixed": "#231b00",
+              "primary-container": "#1e3a8a",
+              "on-tertiary-fixed-variant": "#004395",
+              "surface-variant": "#2d3449",
+              "on-error-container": "#ffdad6",
+              "inverse-primary": "#4059aa",
+              "secondary-fixed-dim": "#eac33e",
+              "surface-tint": "#b6c4ff",
+              "surface-dim": "#0b1326",
+              "secondary-container": "#b59200",
+              "on-primary-fixed-variant": "#264191",
+              "surface": "#0b1326",
+              "surface-container-low": "#131b2e",
+              "on-primary": "#05297a",
+              "on-primary-fixed": "#00164e",
+              "inverse-on-surface": "#283044",
+              "tertiary": "#adc6ff",
+              "secondary-fixed": "#ffe086",
+              "outline": "#8f909d",
+              "on-secondary-container": "#3a2d00",
+              "on-primary-container": "#90a8ff",
+              "on-secondary": "#3c2f00",
+              "surface-bright": "#31394d",
+              "background": "#0b1326",
+              "on-error": "#690005",
+              "error": "#ffb4ab",
+              "surface-container": "#171f33",
+              "primary-fixed": "#dce1ff",
+              "surface-container-highest": "#2d3449",
+              "secondary": "#eac33e",
+              "primary": "#b6c4ff",
+              "on-background": "#dae2fd",
+              "outline-variant": "#444651",
+              "on-surface-variant": "#c5c5d3",
+              "on-surface": "#dae2fd",
+              "on-secondary-fixed-variant": "#574500",
+              "on-tertiary-fixed": "#001a42",
+              "on-tertiary-container": "#82abff",
+              "primary-fixed-dim": "#b6c4ff",
+              "tertiary-container": "#003d88",
+              "tertiary-fixed": "#d8e2ff",
+              "surface-container-lowest": "#060e20",
+              "error-container": "#93000a",
+              "inverse-surface": "#dae2fd"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(45, 52, 73, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .text-glow:hover {
+            text-shadow: 0 0 15px rgba(234, 195, 62, 0.5);
+        }
+        .gold-shadow {
+            box-shadow: 0 20px 40px rgba(234, 195, 62, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary selection:text-on-secondary">
+<!-- TopNavBar -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl rounded-full px-8 py-3 bg-[#0b1326]/70 backdrop-blur-xl flex justify-between items-center z-50 shadow-[0_20px_40px_rgba(5,41,122,0.2)]">
+<div class="font-serif text-2xl italic text-[#dae2fd]">Franz</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#c5c5d3] font-sans text-sm uppercase tracking-widest hover:text-[#eac33e] transition-colors duration-300" href="#">Home</a>
+<a class="text-[#c5c5d3] font-sans text-sm uppercase tracking-widest hover:text-[#eac33e] transition-colors duration-300" href="#">Showroom</a>
+<a class="text-[#eac33e] relative font-sans text-sm uppercase tracking-widest after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-[#eac33e] after:rounded-full" href="#">About</a>
+</div>
+<button class="bg-[#eac33e] text-[#3c2f00] px-6 py-2 rounded-full font-sans text-sm font-bold uppercase tracking-wider scale-95 duration-200 ease-in-out hover:shadow-[0_0_20px_#eac33e]">Inquire</button>
+</nav>
+<main class="relative overflow-hidden">
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col justify-center px-6 pt-32 pb-20 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 space-y-8 z-10">
+<span class="text-secondary font-label text-[0.75rem] uppercase tracking-[0.1em]">The Digital Curator</span>
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl text-on-surface leading-tight tracking-tight">
+                        Words are the <span class="italic">Soul</span> of Sales.
+                    </h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                        I bridge the gap between human emotion and digital precision. As an actor and copywriter, I don't just write scripts—I perform your brand's narrative.
+                    </p>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl gold-shadow transform hover:scale-[1.02] transition-transform duration-500">
+<img alt="Franz Hero Shot" class="w-full h-full object-cover" data-alt="Close-up cinematic portrait of a creative man with thoughtful expression in dramatic studio lighting with dark moody background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz1OPkLV_iWDD01p8WmtGEOa25buzvGS5M6t2YhVKmDq4zR2ObrZ-DdcQdNIXvU6nHImKUCtRoIA1s3DHV8GYTrbOEKXmfc5-kfkcKeGYrV8yDGI1qbGcCpdcmoOXQUp0PoU90bGEzGXFVpFlIZEhOD9Rk9t4ggmBEKMgPP-G1rhJnfG4pvbUZt8wtOEQBnGwbUk7FUlMbORC7tWEikA4krakzxTmaHUtzHXcVLAjoNansdy_qLxUtbGWu75ol7r6IDRznpMyaCT3V"/>
+</div>
+</div>
+</div>
+<!-- Background Glow -->
+<div class="absolute top-1/4 -right-20 w-96 h-96 bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+</section>
+<!-- Chapter 1: The Origin -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1 relative">
+<div class="glass-card p-8 rounded-xl shadow-2xl relative z-10">
+<img alt="Early Sketch" class="w-full h-auto opacity-80 mix-blend-lighten" data-alt="A subtle, artistic charcoal sketch on textured parchment paper showing the early stages of a handwritten letter with ink stains" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmOUL2bym3jTNpJgOGkbjelFO44jMKyT-VH7LLUauc4s84rHvnHiQiKDzXlxy8UYkQ-WwKgIgpUfcwxa7nxkUbDeZKGJ1dokTMniJclWH-qrlG7JJldpaZA0AzyntKCvZnjAR_CDEHdk1_Oxd6G8SPcW8_XIaDR1o-zYFwvlrqlocgtT0bYRQ-eg4rViav7czBmlty_1cmeYsosprueWzXdX4ly3xoZgytQZsSsuN8e7Ukd6ImLqicp3E-j_m-1ZEFOP6dIgMpE9HE"/>
+</div>
+<div class="absolute -bottom-10 -left-10 w-64 h-64 bg-secondary/5 blur-[80px] rounded-full pointer-events-none"></div>
+</div>
+<div class="order-1 lg:order-2 space-y-6">
+<span class="text-secondary font-label text-[0.75rem] uppercase tracking-[0.1em]">Chapter One</span>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface">The First Letter</h2>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed">
+                        At age five, after receiving a particularly memorable 'walloping' for a childhood transgression, I didn't hide. I picked up a crayon. I wrote a love letter to my mother—not just an apology, but a strategic appeal to her heart.
+                    </p>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed italic border-l-2 border-secondary pl-6">
+                        That was my first sale. I learned early on that the right words, delivered with sincerity, could transform any situation.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Chapter 2: The Performer's Soul -->
+<section class="py-32 bg-surface-container-low relative overflow-hidden">
+<div class="max-w-5xl mx-auto px-6 text-center space-y-12">
+<span class="text-secondary font-label text-[0.75rem] uppercase tracking-[0.1em]">The Craft</span>
+<h2 class="font-headline text-5xl md:text-7xl text-on-surface leading-none">The Actor-Writer Synergy</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left pt-12">
+<div class="space-y-4">
+<p class="font-body text-on-surface-variant text-lg leading-relaxed">
+                            High school was a blur of ink and spotlight. Between penning screenplays that challenged the status quo and stepping into characters on stage, I discovered that acting and writing are two sides of the same coin.
+                        </p>
+</div>
+<div class="space-y-4">
+<p class="font-body text-on-surface-variant text-lg leading-relaxed">
+                            When I write copy, I'm not just typing; I'm auditioning for your customer's attention. I inhabit their desires, their fears, and their dreams to craft a voice that resonates in the deep.
+                        </p>
+<a class="inline-flex items-center gap-2 text-secondary font-label text-sm uppercase tracking-widest hover:gap-4 transition-all duration-300" href="#">
+                            Explore Films <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Decorative Film Strip Effect (Background) -->
+<div class="absolute top-1/2 left-0 w-full h-1 bg-outline-variant/10 -rotate-2"></div>
+</section>
+<!-- Chapter 3: The Pivot -->
+<section class="py-32 px-6 max-w-7xl mx-auto">
+<div class="glass-card p-12 md:p-20 rounded-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-4 flex items-center">
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface leading-tight">From Debt to Digital <span class="text-secondary italic">Dominance</span></h2>
+</div>
+<div class="lg:col-span-8 space-y-8">
+<p class="font-body text-on-surface-variant text-xl leading-relaxed">
+                            The pandemic wasn't just a global pause; it was a personal reckoning. Faced with mounting family debt and the weight of uncertainty, the transition to Social Media Management wasn't a choice—it was a survival tactic.
+                        </p>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed">
+                            I took that pressure and turned it into momentum. I realized that the same narrative power I used on stage could build digital empires. I traded the script for the scroll, and I haven't looked back.
+                        </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<span class="px-4 py-1 rounded-full border border-outline-variant text-[0.7rem] uppercase tracking-widest text-on-surface-variant">Resilience</span>
+<span class="px-4 py-1 rounded-full border border-outline-variant text-[0.7rem] uppercase tracking-widest text-on-surface-variant">Growth</span>
+<span class="px-4 py-1 rounded-full border border-outline-variant text-[0.7rem] uppercase tracking-widest text-on-surface-variant">Identity</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Chapter 4: The Partnership -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<span class="text-secondary font-label text-[0.75rem] uppercase tracking-[0.1em]">The Turning Point</span>
+<h2 class="font-headline text-4xl md:text-6xl text-on-surface leading-tight">The Catalyst</h2>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed">
+                        True mastery often requires a mentor. Meeting my transformational life coach changed everything. Under their guidance, I honed my raw talent into professional-grade precision.
+                    </p>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed">
+                        Today, I operate as a multi-faceted creative: a copywriter, editor, and strategic VA. I don't just provide services; I build partnerships that elevate visions into realities.
+                    </p>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-full overflow-hidden border-8 border-surface-container-high shadow-2xl relative z-10">
+<img alt="Franz and Client" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Warm candid photo of two professionals engaged in deep conversation over coffee in a bright modern office space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4Q6STnbkRUW341yrAFr-gaSpFcGyyHir9KnLemHKBdWl-X1fGw3DEP2Xvfqf255dG0LU6JYCWZbj9YcC8Z_3_gc6yoPLjpSoz1FyKu57_RrYeI3FQlUcaeM9o9V3p_T0n3Y7HwpSlF79t9K8ZOE6Ecjb6uU65cBoTUxGynjXXq762X64w1YDwRqIikyd9PaGdXdz5LViTyYDNCC82LSIVjMQtISZXhoRG-8OnNlvlP4ZORfgsveuxX_sdp6Z90GbU-oMDHNqqLr90"/>
+</div>
+<!-- Radial Glow -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-secondary/10 blur-[100px] rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Chapter 5: The Present Vision -->
+<section class="py-40 bg-surface-container relative">
+<div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+<h2 class="font-headline text-5xl md:text-8xl text-on-surface italic leading-none">Your Vision, Echoed</h2>
+<p class="font-body text-on-surface-variant text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto">
+                    My mission is simple: to take the quiet whispers of your ambition and amplify them into a roar that echoes throughout the universe.
+                </p>
+<div class="pt-12">
+<div class="w-px h-24 bg-gradient-to-b from-secondary to-transparent mx-auto"></div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-6 max-w-4xl mx-auto text-center space-y-12">
+<h3 class="font-headline text-4xl md:text-5xl text-on-surface">Let's collaborate on your next big success.</h3>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<a class="font-body text-lg text-secondary underline underline-offset-8 decoration-outline-variant hover:decoration-secondary transition-all" href="mailto:abadiafrancisanthony@gmail.com">
+                    abadiafrancisanthony@gmail.com
+                </a>
+<a class="bg-secondary text-on-secondary px-10 py-4 rounded-md font-sans font-bold uppercase tracking-widest hover:shadow-[0_0_30px_#eac33e] transition-all" href="#">
+                    Contact Me
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-[#0b1326] border-t border-[#444651]/15 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="font-serif text-lg text-[#dae2fd]">Franz</div>
+<p class="font-sans text-[0.75rem] uppercase tracking-[0.1em] text-[#c5c5d3]">© 2024 Franz. All rights reserved. Curated Excellence.</p>
+<div class="flex items-center gap-6">
+<a class="text-[#c5c5d3] hover:text-[#eac33e] transition-all opacity-80 hover:opacity-100" href="#">
+<span class="material-symbols-outlined">contract</span>
+</a>
+<a class="text-[#c5c5d3] hover:text-[#eac33e] transition-all opacity-80 hover:opacity-100" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="text-[#c5c5d3] hover:text-[#eac33e] transition-all opacity-80 hover:opacity-100" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div>
+</footer>
+</body></html>

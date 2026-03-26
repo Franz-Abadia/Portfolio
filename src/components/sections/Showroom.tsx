@@ -20,7 +20,7 @@ export function Showroom() {
     <section id="showroom" className="relative py-32 px-6">
       
 
-      <div className="mx-auto max-w-6xl">
+      <div className="relative overflow-hidden bg-background mx-auto max-w-6xl">
          <div className="mx-auto flex max-w-7xl flex-col items-center justify-center text-center px-4">  
         <ScrollReveal>
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
@@ -38,6 +38,7 @@ export function Showroom() {
         </ScrollReveal>
       </div>
         {/* Filter pills */}
+        <ScrollReveal>
         <div className="mt-10 flex flex-wrap gap-3">
           {categories.map((cat) => (
             <button
@@ -54,7 +55,7 @@ export function Showroom() {
             </button>
           ))}
         </div>
-
+        </ScrollReveal>
         {/* Grid */}
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((item, i) => (

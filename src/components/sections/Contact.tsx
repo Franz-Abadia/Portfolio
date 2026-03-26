@@ -5,7 +5,6 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { FiPhone, FiMail } from "react-icons/fi";
 import { FaWhatsapp, FaTelegramPlane, FaLinkedin } from "react-icons/fa";
 
-// 1. Import the Next.js Server Action we created earlier
 import { sendEmail } from "@/app/actions/actions";  
 
 export function Contact() {
@@ -17,19 +16,16 @@ export function Contact() {
   });
   
   const [sent, setSent] = useState(false);
-  // 2. Add a loading state for Next.js API calls
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  // 3. Use Next.js Server Action instead of mailto:
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Call the server action to safely send the email via Resend
     const result = await sendEmail(formData);
 
     if (result.success) {
@@ -67,7 +63,6 @@ export function Contact() {
         background: "linear-gradient(180deg, #070C1E 0%, #0B1530 60%, #0E1A38 100%)",
       }}
     >
-      {/* Ambient glows */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -81,10 +76,8 @@ export function Contact() {
       <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32 lg:py-40">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
 
-          {/* ── Left Column ── */}
           <ScrollReveal>
           <div className="flex flex-col justify-between gap-10">
-            {/* Header */}
             <div>
               <p
                 className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em]"
@@ -120,7 +113,6 @@ export function Contact() {
               </p>
             </div>
 
-            {/* Contact details */}
             <div>
               <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-500">
                 Let&apos;s Chat!
