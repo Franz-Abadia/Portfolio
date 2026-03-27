@@ -24,7 +24,7 @@
   --glass-bg: rgba(45, 52, 73, 0.4);
   --glass-border: rgba(68, 70, 81, 0.15);
   --glass-shadow: 0 20px 40px rgba(5, 41, 122, 0.2);
-  
+
   /* Additional surface colors from DESIGN.md */
   --surface-container-low: #131b2e;
   --surface-container: #171f33;
@@ -67,6 +67,7 @@
 /* ── Base Styles ── */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -75,19 +76,23 @@ body {
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* ── Custom scrollbar ── */
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--border);
   border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gold);
 }
@@ -107,33 +112,69 @@ body {
   -webkit-backdrop-filter: blur(20px);
 }
 
+.bg-radial-gradient {
+  background: radial-gradient(circle at center, var(--tw-gradient-from) 0%, var(--tw-gradient-to) 100%);
+}
+
 /* ── Scroll Reveal Animations ── */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Staggered children */
-.reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
-.reveal-stagger > .reveal:nth-child(2) { transition-delay: 100ms; }
-.reveal-stagger > .reveal:nth-child(3) { transition-delay: 200ms; }
-.reveal-stagger > .reveal:nth-child(4) { transition-delay: 300ms; }
-.reveal-stagger > .reveal:nth-child(5) { transition-delay: 400ms; }
-.reveal-stagger > .reveal:nth-child(6) { transition-delay: 500ms; }
-.reveal-stagger > .reveal:nth-child(7) { transition-delay: 600ms; }
-.reveal-stagger > .reveal:nth-child(8) { transition-delay: 700ms; }
+.reveal-stagger>.reveal:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.reveal-stagger>.reveal:nth-child(2) {
+  transition-delay: 100ms;
+}
+
+.reveal-stagger>.reveal:nth-child(3) {
+  transition-delay: 200ms;
+}
+
+.reveal-stagger>.reveal:nth-child(4) {
+  transition-delay: 300ms;
+}
+
+.reveal-stagger>.reveal:nth-child(5) {
+  transition-delay: 400ms;
+}
+
+.reveal-stagger>.reveal:nth-child(6) {
+  transition-delay: 500ms;
+}
+
+.reveal-stagger>.reveal:nth-child(7) {
+  transition-delay: 600ms;
+}
+
+.reveal-stagger>.reveal:nth-child(8) {
+  transition-delay: 700ms;
+}
 
 /* ── Typewriter cursor blink ── */
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
+
 .cursor-blink {
   animation: blink 0.8s step-end infinite;
 }
@@ -144,6 +185,8 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  padding: 0.1em;
+  margin: -0.1em;
 }
 
 /* ── Gold gradient text ── */
@@ -152,12 +195,15 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  padding: 0.1em;
+  margin: -0.1em;
 }
 
 /* ── Section spacing ── */
 .section-padding {
   padding: 5rem 1.5rem;
 }
+
 @media (min-width: 768px) {
   .section-padding {
     padding: 7rem 2rem;
@@ -167,8 +213,9 @@ body {
 /* ── Hover lift ── */
 .hover-lift {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .hover-lift:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(96, 165, 250, 0.15);
@@ -187,6 +234,7 @@ body {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
 }
+
 .btn-gold:hover {
   background: var(--gold-hover);
   transform: translateY(-2px);
@@ -205,6 +253,7 @@ body {
   border-radius: 0.75rem;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .btn-outline:hover {
   border-color: var(--blue-accent);
   color: var(--blue-accent);
@@ -220,12 +269,15 @@ body {
   border-radius: 2px;
   transition: all 0.3s ease;
 }
+
 .hamburger-open .hamburger-line:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
+
 .hamburger-open .hamburger-line:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger-open .hamburger-line:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
@@ -247,3 +299,13 @@ body {
   z-index: 0;
 }
 
+/* ── Blueprint Markings ── */
+.blueprint-marking {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  color: rgba(234, 195, 62, 0.15);
+  pointer-events: none;
+  user-select: none;
+  text-transform: uppercase;
+}

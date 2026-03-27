@@ -16,7 +16,7 @@ export function ScrollReveal({ children, className, delay }: ScrollRevealProps) 
   return (
     <div
       ref={ref}
-      className={cn("reveal", isVisible && "visible", className)}
+      className={cn("reveal p-2 -m-2", isVisible && "visible", className)}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}

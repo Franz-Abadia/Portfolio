@@ -15,7 +15,7 @@ export async function sendEmail(formData: {
   try {
     await resend.emails.send({
       from: 'onboarding@resend.dev', // Use this while testing, later change to your verified domain
-      to: 'kiritofrancis21@gmail.com', // Where you want to receive the emails
+      to: 'abadiafrancisanthony@gmail.com', // Where you want to receive the emails
       subject: `Portfolio enquiry from ${formData.firstName} ${formData.lastName}`,
       html: `
         <h3>New Contact Form Submission</h3>

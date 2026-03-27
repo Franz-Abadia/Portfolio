@@ -2,7 +2,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border/40 py-10 px-6">
+    <footer className="border-t border-border/40 py-8 md:py-10 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 md:flex-row">
         <p className="font-display text-sm font-bold text-foreground">
           Franz<span className="text-accent"> Abadia</span>

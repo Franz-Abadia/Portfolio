@@ -53,7 +53,7 @@ export function Testimonials() {
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28 lg:py-32">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
         {/* Header */}
         <ScrollReveal>
           <div className="mb-14 text-center md:mb-20">
@@ -61,7 +61,7 @@ export function Testimonials() {
               The Voices of Impact
             </p>
             <h2
-              className="font-display text-4xl font-light italic text-white md:text-5xl lg:text-7xl"
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light italic text-white"
               style={{ lineHeight: 1.1 }}
             >
               People I Worked With
@@ -72,7 +72,7 @@ export function Testimonials() {
         {/* Carousel slide */}
         <div
           key={current}
-          className="testimonial-slide grid items-center gap-10 md:gap-14 lg:grid-cols-2 lg:gap-20"
+          className="testimonial-slide grid items-center gap-8 md:gap-14 lg:grid-cols-2 lg:gap-20"
           style={{
             animation: `testimonialSlide${direction >= 0 ? "Right" : "Left"} 0.55s cubic-bezier(0.16,1,0.3,1)`,
           }}
@@ -141,21 +141,21 @@ export function Testimonials() {
 
                 {/* Company logo placeholder */}
                 {t.logo && (
-                <div
-                  className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl overflow-hidden"
-                  style={{
-                    background: "rgba(255,255,255,0.06)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                  }}
-                >
-                  <img 
-                    src={t.logo} 
-                    alt={t.company} 
-                    className="h-full w-full object-contain" 
-                    onError={(e) => (e.currentTarget.style.display = 'none')} 
-                  />
-                </div>
-              )}
+                  <div
+                    className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl overflow-hidden"
+                    style={{
+                      background: "rgba(255,255,255,0.06)",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                    }}
+                  >
+                    <img
+                      src={t.logo}
+                      alt={t.company}
+                      className="h-full w-full object-contain"
+                      onError={(e) => (e.currentTarget.style.display = 'none')}
+                    />
+                  </div>
+                )}
               </div>
 
               {/* Socials */}
@@ -192,41 +192,41 @@ export function Testimonials() {
               />
               {/* Image container with arch shape */}
               {/* Image container with arch shape */}
-            <div
-              className="relative h-[340px] w-[280px] overflow-hidden md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[380px]"
-              style={{
-                borderRadius: "200px 200px 24px 24px",
-                border: "2px solid rgba(96, 165, 250, 0.15)",
-                boxShadow: "0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(59,130,246,0.06)",
-                background: "linear-gradient(135deg, #1E293B 0%, #0F172A 100%)",
-              }}
-            >
-              {t.image ? (
-                <img
-                  src={t.image}
-                  alt={t.name}
-                  className="h-full w-full object-cover"
-                />
-              ) : (
-                /* Placeholder portrait with initials - Only shows if image is missing */
-                <div className="flex h-full w-full items-center justify-center">
-                  <div className="text-center">
-                    <div
-                      className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full md:h-28 md:w-28"
-                      style={{
-                        background: "linear-gradient(135deg, rgba(59,130,246,0.20), rgba(252,211,77,0.15))",
-                        border: "2px solid rgba(255,255,255,0.08)",
-                      }}
-                    >
-                      <span className="text-3xl font-bold text-white/60 md:text-4xl">
-                        {t.name.split(" ").map((n) => n[0]).join("")}
-                      </span>
+              <div
+                className="relative h-[340px] w-[280px] overflow-hidden md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[380px]"
+                style={{
+                  borderRadius: "200px 200px 24px 24px",
+                  border: "2px solid rgba(96, 165, 250, 0.15)",
+                  boxShadow: "0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(59,130,246,0.06)",
+                  background: "linear-gradient(135deg, #1E293B 0%, #0F172A 100%)",
+                }}
+              >
+                {t.image ? (
+                  <img
+                    src={t.image}
+                    alt={t.name}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  /* Placeholder portrait with initials - Only shows if image is missing */
+                  <div className="flex h-full w-full items-center justify-center">
+                    <div className="text-center">
+                      <div
+                        className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full md:h-28 md:w-28"
+                        style={{
+                          background: "linear-gradient(135deg, rgba(59,130,246,0.20), rgba(252,211,77,0.15))",
+                          border: "2px solid rgba(255,255,255,0.08)",
+                        }}
+                      >
+                        <span className="text-3xl font-bold text-white/60 md:text-4xl">
+                          {t.name.split(" ").map((n) => n[0]).join("")}
+                        </span>
+                      </div>
+                      <p className="text-sm text-slate-500">{t.name}</p>
                     </div>
-                    <p className="text-sm text-slate-500">{t.name}</p>
                   </div>
-                </div>
-              )}
-            </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

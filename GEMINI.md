@@ -79,3 +79,26 @@ Type shapes for all data are in `src/types/index.ts` — extend there first befo
 - **Do not add a `/pages` directory** — App Router only.
 - **Do not create a new API route for email** — use the existing Server Action pattern.
 - **Do not re-implement scroll/animation logic** — check `src/hooks/` first.
+
+---
+
+## Design System & Aesthetics
+**Theme:** Navy / Blue / Gold (The Digital Curator) — Dark mode by default.
+
+**Typography:**
+- **Sans-serif (Body/UI):** Inter (`var(--font-inter)`) — Used for readable body text and UI elements.
+- **Serif (Display/Headings):** Newsreader (`var(--font-newsreader)`) — Used for large headings, often paired with italics for sophisticated emphasis (`font-display font-light italic`).
+
+**Color Palette:**
+- **Backgrounds:** Deep Navy (`#0b1326`) with darker surface containers for contrast.
+- **Accents:** Gold (`#eac33e`) for primary CTAs and highlights. Blue accent (`#b6c4ff`) and blue glow (`#90a8ff`) for secondary emphasis.
+- **Text:** Light ice blue (`#dae2fd`) for primary foreground, slate/muted (`#c5c5d3`) for secondary text.
+
+**Design Principles & Patterns:**
+- **Glassmorphism:** Use `.glass` or `.glass-card` for translucent, blurred backgrounds with subtle borders and shadows (`backdrop-filter: blur(20px)`).
+- **Gradients:** Use text gradients (`.text-gradient`, `.text-gradient-gold`) for heading emphasis. Use large blurred radial background shapes (e.g., `bg-blue-900/10 blur-[140px]`) behind layouts for atmospheric depth.
+- **Animations:** 
+  - Use the `<ScrollReveal>` utility component or `.reveal` / `.reveal-stagger` classes for fade-up on scroll.
+  - Use `.hover-lift` on cards/interactive elements for a floating effect on hover.
+  - Dynamic typewriters utilize the `useTypewriter` hook with `.cursor-blink`.
+- **Buttons / CTAs:** Use `.btn-gold` for primary, attention-grabbing actions, and `.btn-outline` for secondary actions.

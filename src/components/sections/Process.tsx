@@ -153,7 +153,7 @@ export function Process() {
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32 lg:py-36">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-36">
         {/* Header */}
         <ScrollReveal>
           <div className="mb-16 text-center md:mb-20">
@@ -161,7 +161,7 @@ export function Process() {
               How I Work
             </p>
             <h2
-              className="font-display text-4xl font-light italic text-white md:text-5xl lg:text-7xl"
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light italic text-white"
               style={{ lineHeight: 1.1 }}
             >
               From Brief to{" "}
