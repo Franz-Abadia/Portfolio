@@ -89,7 +89,7 @@ function ProcessCard({ step, index }: { step: ProcessStepData; index: number }) 
           className="mb-2 text-[11px] font-semibold uppercase tracking-[0.25em]"
           style={{ color: "rgba(252, 211, 77, 0.7)" }}
         >
-          {step.number} / Sequence
+          {step.number} / Service
         </p>
 
         {/* Title */}
@@ -158,17 +158,17 @@ export function Process() {
         <ScrollReveal>
           <div className="mb-16 text-center md:mb-20">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-amber-400/60">
-              How I Work
+              My Expertise
             </p>
             <h2
               className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light italic text-white"
               style={{ lineHeight: 1.1 }}
             >
-              From Brief to{" "}
-              <span className="text-gradient">Bottom Line</span>
+              What I Can{" "}
+              <span className="text-gradient">Do For You</span>
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-base text-slate-400 md:text-lg">
-              A proven five-step sequence that turns strategy into measurable results.
+              Driving action and revenue through high-converting, scroll-stopping copy.
             </p>
           </div>
         </ScrollReveal>

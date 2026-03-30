@@ -4,46 +4,46 @@ export const processSteps: ProcessStepData[] = [
   {
     id: 1,
     number: "01",
-    title: "Discovery",
+    title: "Website Copy",
     description:
-      "The initial immersion. We unearth the core narrative through deep interrogation and brand audit.",
+      "Clear messaging for homepages, service pages, landing pages, and offer pages.",
     icon: "discovery",
-    tags: ["Stakeholder Audit", "Narrative Mapping"],
+    tags: ["Homepages", "Landing Pages", "Offers"],
   },
   {
     id: 2,
     number: "02",
-    title: "Research",
+    title: "Ad Scripts & Creative Copy",
     description:
-      'Analyzing market friction and cultural zeitgeist to find the "Silent Void" your project will fill.',
+      "Short-form video scripts, hooks, ad angles, and social copy built to stop scroll and drive action.",
     icon: "research",
-    tags: ["Cultural Trends", "UX Archetypes"],
+    tags: ["Video Scripts", "Social Angles", "Hooks"],
   },
   {
     id: 3,
     number: "03",
-    title: "Strategy",
+    title: "Email Copy",
     description:
-      "Architecting the visual and cognitive framework. We define the constraints that invite true creativity.",
+      "Launch emails, promo sequences, nurture flows, and direct-response campaigns.",
     icon: "strategy",
-    tags: ["Visual DNA", "User Flow"],
+    tags: ["Promo Sequences", "Nurture Flows"],
   },
   {
     id: 4,
     number: "04",
-    title: "Copywriting",
+    title: "Brand Messaging",
     description:
-      "Precision-tuned language that creates emotional resonance and guides the user toward intent.",
+      "Positioning, offer clarity, voice direction, and message structure for brands that sound messy or generic.",
     icon: "copywriting",
-    tags: ["Microcopy", "Brand Voice"],
+    tags: ["Positioning", "Voice Direction"],
   },
   {
     id: 5,
     number: "05",
-    title: "Optimization",
+    title: "Copy Audits",
     description:
-      "Polishing every pixel and interaction until the experience feels invisible yet indispensable.",
+      "If your current copy feels weak, confusing, or flat, I break down what is not working and what to fix.",
     icon: "optimization",
-    tags: ["Perf Audit", "A/B Refinement"],
+    tags: ["Breakdowns", "Actionable Fixes"],
   },
 ];

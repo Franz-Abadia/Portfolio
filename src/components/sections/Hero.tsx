@@ -63,17 +63,12 @@ export function Hero() {
           {/* We only wrap the text content inside ScrollReveal */}
           <ScrollReveal>
             <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-gold md:text-base">
-              The one you&apos;re looking for!
+             If your offer is good but your words are not pulling their weight, I fix that.
             </p>
 
             <h1 className="font-display text-4xl sm:text-5xl font-regular leading-[1.1] tracking-[-0.02em] text-white md:text-6xl lg:text-7xl xl:text-[4.5rem]">
               I write copy that
               <br />
-              {/* 
-      1. We use 'block' instead of 'inline-block' for a more stable container.
-      2. We set 'min-h-[2.2em]' (2 lines) because your phrases wrap. 
-         Adjust to '[3.3em]' if it wraps to 3 lines on mobile.
-  */}
               <span className="relative block min-h-[3.3em] md:min-h-[2.2em]">
                 <span className="text-gradient font-light italic">
                   {text}
@@ -91,7 +86,7 @@ export function Hero() {
             {/* CTA buttons */}
             <div className="mt-8 md:mt-12 flex flex-wrap justify-center md:justify-start items-center gap-3 sm:gap-5">
               <a href="/about" className="btn-gold text-base">
-                Read Tony&apos;s Story
+                View Case Studies
               </a>
               <a
                 href="/FranzAbadia-Resume.pdf"

@@ -31,7 +31,7 @@ export function ShowroomBento() {
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 mb-20">
-        
+
         {/* 1. MAIN CARD (Left) */}
         <div className="lg:col-span-5 flex flex-col justify-between p-8 md:p-12 rounded-2xl border border-white/5 bg-[#0a0f1e] shadow-2xl relative overflow-hidden group min-h-[400px] lg:min-h-[550px] hover:border-gold/30 transition-all duration-500">
           <div className="space-y-4 relative z-10">
@@ -39,48 +39,58 @@ export function ShowroomBento() {
             <h3 className="font-display text-7xl sm:text-8xl mt-4 lg:text-[7.5rem] tracking-tighter text-white leading-none">3,543</h3>
             <p className="text-xs font-bold uppercase tracking-[0.15em] text-gold/90">NEW INQUIRIES</p>
           </div>
-          <div className="mt-12 relative z-10">
+          <div className="mt-12 relative z-10 space-y-6">
             <p className="text-sm md:text-base leading-relaxed text-muted-foreground/90 max-w-xs">
-              Targeted ad structures generated lower cost per conversation and a <span className="text-white font-medium">+31% jump</span> in purchases in 30 days.
+              Structured targeted copy and creatives that generated <span className="text-white font-medium">3,543 new inquiries</span> and contributed to a 31% jump in purchases in 30 days.
             </p>
+            
+            <a 
+              href="https://www.canva.com/design/DAG5ppKj1mE/yQ9ljStonJ5KTOztdi3a1g/view?utm_content=DAG5ppKj1mE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h30b58dcda4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/link inline-flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.2em] text-white/50 hover:text-gold transition-colors duration-300 mt-auto"
+            >
+              See how we did it
+              <HiArrowRight className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
+            </a>
           </div>
           <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 blur-[80px] rounded-full pointer-events-none group-hover:opacity-100 opacity-50 transition-opacity" />
         </div>
 
         {/* RIGHT COLUMN WRAPPER */}
         <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-          
+
           {/* 2. VISUAL SLIDESHOW CARD */}
-          <div 
+          <div
             className="sm:col-span-2 relative aspect-16/10 sm:aspect-video rounded-2xl overflow-hidden bg-black/40 border border-white/5 shadow-xl group hover:border-gold/30 transition-all cursor-pointer"
             onClick={() => setIsLightboxOpen(true)}
           >
             {slideImages.map((src, idx) => (
-              <div 
+              <div
                 key={src}
                 className={cn(
                   "absolute inset-0 w-full h-full transition-opacity duration-500",
                   currentSlide === idx ? "opacity-100 z-10" : "opacity-0 z-0"
                 )}
               >
-                <img 
+                <img
                   src={src}
                   alt={`Result slide ${idx + 1}`}
                   className="w-full h-full object-contain p-4 md:p-8"
                 />
               </div>
             ))}
-            
+
             {/* Navigation Arrows */}
             <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 flex gap-2">
-              <button 
+              <button
                 onClick={handlePrev}
                 className="w-10 h-10 rounded-full bg-black/80 backdrop-blur-md flex items-center justify-center text-white border border-white/10 hover:bg-gold/20 hover:text-gold transition-all"
                 aria-label="Previous image"
               >
                 <HiArrowLeft className="w-5 h-5" />
               </button>
-              <button 
+              <button
                 onClick={handleNext}
                 className="w-10 h-10 rounded-full bg-black/80 backdrop-blur-md flex items-center justify-center text-white border border-white/10 hover:bg-gold/20 hover:text-gold transition-all"
                 aria-label="Next image"
@@ -88,7 +98,7 @@ export function ShowroomBento() {
                 <HiArrowRight className="w-5 h-5" />
               </button>
             </div>
-            
+
             {/* Image Counter Label */}
             <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-20 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10 hidden sm:block">
               <p className="text-[10px] font-bold text-white/90 tracking-widest uppercase">
@@ -102,44 +112,62 @@ export function ShowroomBento() {
             <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-gold/90 mb-4 block">JUHAYDAH SOUVENIR</span>
             <h3 className="font-display text-5xl md:text-6xl tracking-tight text-white mb-2">₱85K</h3>
             <p className="text-[10px] font-bold uppercase tracking-widest text-gold/60 mb-4">REVENUE TRACKED</p>
-            <p className="text-xs md:text-sm leading-relaxed text-muted-foreground/90">
+            <p className="text-xs md:text-sm leading-relaxed text-muted-foreground/90 mb-6">
               Transformed <span className="text-white font-medium">₱2,562</span> of spend into massive returns.
             </p>
+            <a 
+              href="https://www.canva.com/design/DAHB1HfCsXU/WpdC6ju9bEwB_VoJz3Hyfw/view?utm_content=DAHB1HfCsXU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7bb2699f9f"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/link inline-flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.2em] text-white/50 hover:text-gold transition-colors duration-300 mt-auto"
+            >
+              See more
+              <HiArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
+            </a>
           </div>
 
           {/* 4. REVENUE CARD */}
           <div className="flex flex-col justify-center p-8 rounded-2xl border border-white/5 bg-[#0a0f1e] shadow-xl group hover:border-gold/30 transition-all min-h-[220px]">
-             <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-gold/90 mb-4 block">VILLA CRISTINA RESORT</span>
-             <h3 className="font-display text-5xl md:text-6xl tracking-tight text-white mb-2">10x</h3>
-             <p className="text-[10px] font-bold uppercase tracking-widest text-gold/60 mb-4">MORE CONVERSATIONS</p>
-             <p className="text-xs md:text-sm leading-relaxed text-muted-foreground/90">
-                <span className="text-white font-medium">₱158K</span> generated in 3 days via high-intent conversation funnels.
-             </p>
+            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-gold/90 mb-4 block">VILLA CRISTINA RESORT</span>
+            <h3 className="font-display text-5xl md:text-6xl tracking-tight text-white mb-2">10x</h3>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-gold/60 mb-4">MORE CONVERSATIONS</p>
+            <p className="text-xs md:text-sm leading-relaxed text-muted-foreground/90 mb-6">
+              <span className="text-white font-medium">₱158K</span> generated in 3 days via high-intent messaging.
+            </p>
+            <a 
+              href="https://www.canva.com/design/DAHB1VH4iPY/ovI9FWpwYZ7Hp9W4voxlMw/view?utm_content=DAHB1VH4iPY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hde00aafaed"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/link inline-flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.2em] text-white/50 hover:text-gold transition-colors duration-300 mt-auto"
+            >
+              See the data
+              <HiArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
+            </a>
           </div>
-          
+
         </div>
       </div>
 
       {/* LIGHTBOX POP-UP */}
       {isLightboxOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-sm px-4">
-          <button 
+          <button
             onClick={() => setIsLightboxOpen(false)}
             className="absolute top-6 right-6 sm:top-10 sm:right-10 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all z-50"
             aria-label="Close lightbox"
           >
             <HiXMark className="w-6 h-6" />
           </button>
-          
-          <button 
+
+          <button
             onClick={handlePrev}
             className="absolute left-4 sm:left-10 w-12 h-12 rounded-full bg-white/10 hidden sm:flex items-center justify-center text-white hover:bg-gold/20 hover:text-gold transition-all z-50"
             aria-label="Previous image"
           >
             <HiArrowLeft className="w-6 h-6" />
           </button>
-          
-          <button 
+
+          <button
             onClick={handleNext}
             className="absolute right-4 sm:right-10 w-12 h-12 rounded-full bg-white/10 hidden sm:flex items-center justify-center text-white hover:bg-gold/20 hover:text-gold transition-all z-50"
             aria-label="Next image"
@@ -147,26 +175,26 @@ export function ShowroomBento() {
             <HiArrowRight className="w-6 h-6" />
           </button>
 
-          <img 
-            src={slideImages[currentSlide]} 
-            alt="Expanded view" 
+          <img
+            src={slideImages[currentSlide]}
+            alt="Expanded view"
             className="max-w-full max-h-[85vh] object-contain rounded-xl border border-white/10 shadow-2xl relative z-40"
           />
-          
+
           {/* Mobile Arrows in Lightbox */}
           <div className="absolute bottom-10 left-0 right-0 flex justify-center gap-6 sm:hidden z-50">
-             <button 
-               onClick={handlePrev}
-               className="w-12 h-12 rounded-full bg-black/50 border border-white/20 flex items-center justify-center text-white"
-             >
-               <HiArrowLeft className="w-6 h-6" />
-             </button>
-             <button 
-               onClick={handleNext}
-               className="w-12 h-12 rounded-full bg-black/50 border border-white/20 flex items-center justify-center text-white"
-             >
-               <HiArrowRight className="w-6 h-6" />
-             </button>
+            <button
+              onClick={handlePrev}
+              className="w-12 h-12 rounded-full bg-black/50 border border-white/20 flex items-center justify-center text-white"
+            >
+              <HiArrowLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={handleNext}
+              className="w-12 h-12 rounded-full bg-black/50 border border-white/20 flex items-center justify-center text-white"
+            >
+              <HiArrowRight className="w-6 h-6" />
+            </button>
           </div>
         </div>
       )}
