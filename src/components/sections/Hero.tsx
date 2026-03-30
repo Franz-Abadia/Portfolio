@@ -91,7 +91,7 @@ export function Hero() {
             {/* CTA buttons */}
             <div className="mt-8 md:mt-12 flex flex-wrap justify-center md:justify-start items-center gap-3 sm:gap-5">
               <a href="/about" className="btn-gold text-base">
-                Read Franz&apos; Story
+                Read Tony&apos;s Story
               </a>
               <a
                 href="/FranzAbadia-Resume.pdf"

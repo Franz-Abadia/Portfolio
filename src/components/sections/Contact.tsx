@@ -225,7 +225,7 @@ export function Contact() {
                         value={formData.firstName}
                         onChange={handleChange}
                         required
-                        placeholder="Franz"
+                        placeholder="Tony"
                         className="rounded-lg border bg-transparent px-4 py-3 text-sm text-white placeholder:text-slate-600 outline-none transition-all focus:ring-1"
                         style={{
                           borderColor: "rgba(96,165,250,0.12)",

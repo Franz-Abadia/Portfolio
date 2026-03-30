@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/about" },
 ];
 
@@ -32,7 +31,7 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/40 shadow-2xl py-4 px-4 sm:px-6 lg:px-8"
+          ? "bg-background/80 backdrop-blur-xl shadow-2xl py-4 px-4 sm:px-6 lg:px-8"
           : "bg-transparent py-4 md:py-6 px-4 sm:px-6 lg:px-8"
       )}
     >
@@ -42,7 +41,7 @@ export function Navbar() {
           href="/"
           className="font-display text-3xl italic tracking-tight text-white transition-opacity hover:opacity-80"
         >
-          Franz
+          Tony
         </Link>
 
         {/* Center: Desktop Links */}

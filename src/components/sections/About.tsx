@@ -22,21 +22,43 @@ export function AboutSection() {
         </ScrollReveal>
 
         {/* Wide Image Section */}
-        <ScrollReveal delay={200} className="w-full">
-          <div className="w-full max-w-6xl relative group mt-8">
-            <div className="aspect-video md:aspect-[21/13] lg:aspect-[21/12] rounded-2xl overflow-hidden shadow-2xl transition-transform duration-700 bg-surface-container-high relative">
-              <Image
-                src="/images/about/FranzAbout.png"
-                alt="Franz Professional Portrait"
-                fill
-                priority
-                className="object-cover object-top filter grayscale hover:grayscale-0 transition-all duration-1000"
-              />
-              {/* Subtle Gradient Overlay */}
-              <div className="absolute inset-0 pointer-events-none rounded-2xl ring-1 ring-white/10"></div>
-            </div>
-          </div>
-        </ScrollReveal>
+        {/* Wide Image Section - Balanced & Editorial */}
+<ScrollReveal delay={200} className="w-full">
+  <div className="w-full max-w-5xl mx-auto px-4 sm:px-0">
+    <div className="relative group">
+      
+      {/* Decorative Corner Elements for an 'Editorial' feel */}
+      <div className="absolute -top-4 -left-4 w-12 h-12 border-t border-l border-gold/30 rounded-tl-2xl pointer-events-none hidden md:block" />
+      <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b border-r border-gold/30 rounded-br-2xl pointer-events-none hidden md:block" />
+
+      {/* The Image Container */}
+      <div 
+        className="relative aspect-16/10 md:aspect-21/12 lg:aspect-21/15 rounded-2xl overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.6)] border border-white/5 bg-[#0A0F1E]"
+      >
+        <Image
+          src="/images/about/FranzAbout.png"
+          alt="Franz Professional Portrait"
+          fill
+          priority
+          className="object-cover object-[center_25%] filter grayscale brightness-90 contrast-110 hover:grayscale-0 hover:scale-105 transition-all duration-1000 ease-out"
+        />
+        
+        {/* Editorial Vingette & Overlay */}
+        <div className="absolute inset-0 bg-linear-to-t from-[#070C1E]/60 via-transparent to-transparent pointer-events-none" />
+        
+        {/* Subtle Label (Bottom Left) */}
+        <div className="absolute bottom-6 left-8 hidden md:block">
+          <p className="text-[10px] uppercase tracking-[0.5em] text-white/40 font-bold">
+            Act I: The Presence
+          </p>
+        </div>
+      </div>
+
+      {/* Decorative Glow */}
+      <div className="absolute -inset-10 bg-gold/5 blur-[80px] rounded-full -z-10 opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+    </div>
+  </div>
+</ScrollReveal>
 
         {/* Background Glow */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[60%] h-[40%] bg-navy/10 blur-[150px] rounded-full pointer-events-none -z-10"></div>

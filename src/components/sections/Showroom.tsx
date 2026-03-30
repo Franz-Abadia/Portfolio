@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ShowroomCard } from "@/components/ui/ShowroomCard";
+import { ShowroomBento } from "@/components/ui/ShowroomBento";
 import { showroomItems } from "@/data/showroomItems";
 import { cn } from "@/lib/utils";
 
@@ -11,42 +12,50 @@ const categories = ["All", ...Array.from(new Set(showroomItems.map((i) => i.cate
 export function Showroom() {
   const [active, setActive] = useState("All");
 
-  const filtered =
-    active === "All"
-      ? showroomItems
-      : showroomItems.filter((i) => i.category === active);
+  const filtered = active === "All" 
+    ? showroomItems 
+    : showroomItems.filter((i) => i.category === active);
 
   return (
     <section id="showroom" className="relative py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
       <div className="relative overflow-hidden bg-background mx-auto max-w-6xl">
-        <div className="mx-auto flex max-w-3xl flex-col items-center justify-center text-center">
+        
+        {/* Header Section */}
+        <div className="mx-auto flex max-w-3xl flex-col items-center justify-center text-center mb-16 md:mb-20">
           <ScrollReveal>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
-              Selected Work
-            </p>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-light italic text-foreground">
-              The Copy
-              <span className="text-gradient"> Showroom</span>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">Selected Work</p>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light italic text-foreground">
+              The Copy <span className="text-gradient"> Showroom</span>
             </h2>
-            <p className="mt-4 md:mt-5 max-w-prose mx-auto text-base md:text-lg text-muted-foreground">
-              There's no better way to communicate my work than by showing you my craftsmanship.
-              Email content, Website Content, Social Media Copy -- whatever you think of, I may have already written it!
-              Take a few moments to let your eyes linger in finding the content you need!
+            <p className="mt-5 max-w-prose mx-auto text-base md:text-lg text-muted-foreground">
+              There&apos;s no better way to communicate my work than by showing you my craftsmanship. 
+              Email, Web, Social—take a moment to let your eyes linger.
             </p>
           </ScrollReveal>
         </div>
+
+        {/* --- BENTO GRID COMPONENT --- */}
+        <ScrollReveal>
+          <ShowroomBento />
+        </ScrollReveal>
+
+        {/* Archives Divider */}
+        <div className="w-full max-w-2xl mx-auto border-t border-white/5 mb-16 relative">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 bg-background text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Portfolio Archives</div>
+        </div>
+
         {/* Filter pills */}
         <ScrollReveal>
-          <div className="mt-8 md:mt-10 flex flex-wrap justify-center gap-2 sm:gap-3">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
                 className={cn(
-                  "rounded-full border px-4 sm:px-5 py-2 text-xs sm:text-sm font-medium transition-all",
+                  "rounded-full border px-5 py-2 text-xs sm:text-sm font-medium transition-all duration-300",
                   active === cat
-                    ? "border-accent bg-accent/10 text-accent"
-                    : "border-border text-muted-foreground hover:border-accent/40 hover:text-foreground"
+                    ? "border-accent bg-accent/10 text-accent ring-1 ring-accent/50"
+                    : "border-white/10 text-muted-foreground hover:border-accent/40 hover:text-foreground"
                 )}
               >
                 {cat}
@@ -54,10 +63,11 @@ export function Showroom() {
             ))}
           </div>
         </ScrollReveal>
-        {/* Grid */}
-        <div className="mt-8 md:mt-12 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        {/* Portfolio Cards Grid */}
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((item, i) => (
-            <ScrollReveal key={item.id} delay={i * 80}>
+            <ScrollReveal key={item.id} delay={i * 50}>
               <ShowroomCard item={item} />
             </ScrollReveal>
           ))}

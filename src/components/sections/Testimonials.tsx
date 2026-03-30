@@ -69,163 +69,163 @@ export function Testimonials() {
           </div>
         </ScrollReveal>
 
-        {/* Carousel slide */}
-        <div
-          key={current}
-          className="testimonial-slide grid items-center gap-8 md:gap-14 lg:grid-cols-2 lg:gap-20"
-          style={{
-            animation: `testimonialSlide${direction >= 0 ? "Right" : "Left"} 0.55s cubic-bezier(0.16,1,0.3,1)`,
-          }}
-        >
-          {/* Left – Quote Card */}
-          <div className="order-2 lg:order-1">
-            <div
-              className="relative rounded-2xl p-8 md:p-10"
+        {/* Carousel slide container - Stable fixed height on large screens */}
+        <div className="mx-auto max-w-5xl">
+          <div
+            className="grid items-center gap-8 md:gap-14 lg:items-end lg:grid-cols-[1fr_400px] lg:gap-0 lg:h-[550px]"
+          >
+            {/* Left – Quote Card */}
+            <div 
+              key={`text-${current}`}
+              className="order-2 lg:order-1 flex flex-col lg:h-full lg:justify-end"
               style={{
-                background: "rgba(15, 23, 42, 0.65)",
-                backdropFilter: "blur(20px)",
-                border: "1px solid rgba(96, 165, 250, 0.10)",
-                boxShadow:
-                  "0 8px 40px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.05)",
+                animation: `testimonialFade 0.7s cubic-bezier(0.16,1,0.3,1)`,
               }}
             >
-              {/* Big quote mark */}
-              <svg
-                className="mb-5 h-10 w-10 md:h-12 md:w-12"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
-                  fill="url(#quoteGrad)"
-                />
-                <defs>
-                  <linearGradient
-                    id="quoteGrad"
-                    x1="0"
-                    y1="0"
-                    x2="24"
-                    y2="24"
-                  >
-                    <stop stopColor="#FCD34D" />
-                    <stop offset="1" stopColor="#F59E0B" />
-                  </linearGradient>
-                </defs>
-              </svg>
-
-              {/* Quote text */}
-              <p className="mb-8 text-base leading-relaxed text-slate-300/90 md:text-lg md:leading-relaxed">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-
-              {/* Divider */}
               <div
-                className="mb-6 h-px w-16"
+                className="relative rounded-2xl p-8 md:p-12 lg:h-[460px] flex flex-col justify-between z-10 lg:-mr-px"
                 style={{
-                  background:
-                    "linear-gradient(90deg, #FCD34D, rgba(252,211,77,0.15))",
+                  background: "rgba(15, 23, 42, 0.65)",
+                  backdropFilter: "blur(20px)",
+                  border: "1px solid rgba(96, 165, 250, 0.10)",
+                  boxShadow:
+                    "0 8px 40px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.05)",
                 }}
-              />
-
-              {/* Author */}
-              <div className="flex items-center gap-4">
-                <div className="flex-1">
-                  <p className="text-lg font-bold text-white md:text-xl">
-                    {t.name}
-                  </p>
-                  <p className="mt-1 text-sm text-slate-400">{t.role}</p>
-                  <p className="text-sm font-medium text-blue-400/80">
-                    {t.company}
-                  </p>
-                </div>
-
-                {/* Company logo placeholder */}
-                {t.logo && (
-                  <div
-                    className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl overflow-hidden"
-                    style={{
-                      background: "rgba(255,255,255,0.06)",
-                      border: "1px solid rgba(255,255,255,0.08)",
-                    }}
+              >
+                <div>
+                  {/* Big quote mark */}
+                  <svg
+                    className="mb-5 h-10 w-10 md:h-12 md:w-12"
+                    viewBox="0 0 24 24"
+                    fill="none"
                   >
-                    <img
-                      src={t.logo}
-                      alt={t.company}
-                      className="h-full w-full object-contain"
-                      onError={(e) => (e.currentTarget.style.display = 'none')}
+                    <path
+                      d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                      fill="url(#quoteGrad)"
                     />
-                  </div>
-                )}
-              </div>
-
-              {/* Socials */}
-              {t.socials && t.socials.length > 0 && (
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {t.socials.map((s) => (
-                    <span
-                      key={s}
-                      className="rounded-full px-3 py-1 text-xs text-slate-400/80"
-                      style={{
-                        background: "rgba(255,255,255,0.04)",
-                        border: "1px solid rgba(255,255,255,0.06)",
-                      }}
-                    >
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Right – Portrait Image */}
-          <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
-            <div className="relative">
-              {/* Glow behind image */}
-              <div
-                className="absolute -inset-4 rounded-[2rem]"
-                style={{
-                  background:
-                    "radial-gradient(ellipse at center, rgba(59,130,246,0.12), transparent 70%)",
-                  filter: "blur(30px)",
-                }}
-              />
-              {/* Image container with arch shape */}
-              {/* Image container with arch shape */}
-              <div
-                className="relative h-[340px] w-[280px] overflow-hidden md:h-[420px] md:w-[340px] lg:h-[480px] lg:w-[380px]"
-                style={{
-                  borderRadius: "200px 200px 24px 24px",
-                  border: "2px solid rgba(96, 165, 250, 0.15)",
-                  boxShadow: "0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(59,130,246,0.06)",
-                  background: "linear-gradient(135deg, #1E293B 0%, #0F172A 100%)",
-                }}
-              >
-                {t.image ? (
-                  <img
-                    src={t.image}
-                    alt={t.name}
-                    className="h-full w-full object-cover"
-                  />
-                ) : (
-                  /* Placeholder portrait with initials - Only shows if image is missing */
-                  <div className="flex h-full w-full items-center justify-center">
-                    <div className="text-center">
-                      <div
-                        className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full md:h-28 md:w-28"
-                        style={{
-                          background: "linear-gradient(135deg, rgba(59,130,246,0.20), rgba(252,211,77,0.15))",
-                          border: "2px solid rgba(255,255,255,0.08)",
-                        }}
+                    <defs>
+                      <linearGradient
+                        id="quoteGrad"
+                        x1="0"
+                        y1="0"
+                        x2="24"
+                        y2="24"
                       >
-                        <span className="text-3xl font-bold text-white/60 md:text-4xl">
-                          {t.name.split(" ").map((n) => n[0]).join("")}
-                        </span>
-                      </div>
-                      <p className="text-sm text-slate-500">{t.name}</p>
+                        <stop stopColor="#FCD34D" />
+                        <stop offset="1" stopColor="#F59E0B" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+
+                  {/* Quote text */}
+                  <p className="mb-8 text-base leading-relaxed text-slate-300/90 md:text-lg md:leading-relaxed italic">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                </div>
+
+                <div>
+                  {/* Divider */}
+                  <div
+                    className="mb-6 h-px w-16"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #FCD34D, rgba(252,211,77,0.15))",
+                    }}
+                  />
+
+                  {/* Author */}
+                  <div className="flex items-center gap-4">
+                    <div className="flex-1">
+                      <p className="text-lg font-bold text-white md:text-xl">
+                        {t.name}
+                      </p>
+                      <p className="mt-1 text-sm text-slate-400 line-clamp-1">{t.role}</p>
+                      <p className="text-sm font-medium text-blue-400/80">
+                        {t.company}
+                      </p>
                     </div>
+
+                    {/* Company logo placeholder */}
+                    {t.logo && (
+                      <div
+                        className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl overflow-hidden bg-white/5 border border-white/10"
+                      >
+                        <img
+                          src={t.logo}
+                          alt={t.company}
+                          className="h-full w-full object-contain p-1"
+                          onError={(e) => (e.currentTarget.style.display = 'none')}
+                        />
+                      </div>
+                    )}
                   </div>
-                )}
+
+                  {/* Socials */}
+                  {t.socials && t.socials.length > 0 && (
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {t.socials.map((s) => (
+                        <span
+                          key={s}
+                          className="rounded-full px-3 py-1 text-[10px] text-slate-400/80 bg-white/5 border border-white/10"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Right – Portrait Image */}
+            <div 
+              key={`img-${current}`}
+              className="order-1 flex justify-center lg:order-2 lg:justify-start lg:h-full"
+              style={{
+                animation: `testimonialFade 0.7s cubic-bezier(0.16,1,0.3,1)`,
+              }}
+            >
+              <div className="relative group/portrait lg:h-full lg:w-full max-w-[400px]">
+                {/* Glow behind image */}
+                <div
+                  className="absolute -inset-4 rounded-[2rem] opacity-40 group-hover/portrait:opacity-70 transition-opacity"
+                  style={{
+                    background:
+                      "radial-gradient(ellipse at center, rgba(59,130,246,0.2), transparent 70%)",
+                    filter: "blur(30px)",
+                  }}
+                />
+                
+                {/* Arch shape image container */}
+                <div
+                  className="relative h-[380px] w-full max-w-[300px] md:h-[420px] md:max-w-[340px] lg:h-full lg:max-w-none lg:w-full overflow-hidden border-2 border-blue-400/15 lg:border-l-0"
+                  style={{
+                    borderRadius: "200px 200px 24px 24px",
+                    boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
+                    background: "linear-gradient(135deg, #1E293B 0%, #0F172A 100%)",
+                  }}
+                >
+                  {t.image ? (
+                    <img
+                      src={t.image}
+                      alt={t.name}
+                      className="h-full w-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-500"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center">
+                      <div className="text-center">
+                        <div
+                          className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full md:h-28 md:w-28 bg-linear-to-br from-blue-500/20 to-amber-500/10 border border-white/10"
+                        >
+                          <span className="text-3xl font-bold text-white/60 md:text-4xl">
+                            {t.name.split(" ").map((n) => n[0]).join("")}
+                          </span>
+                        </div>
+                        <p className="text-sm text-slate-500">{t.name}</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -300,24 +300,14 @@ export function Testimonials() {
 
       {/* Keyframes */}
       <style jsx>{`
-        @keyframes testimonialSlideRight {
+        @keyframes testimonialFade {
           from {
             opacity: 0;
-            transform: translateX(40px);
+            transform: translateY(10px);
           }
           to {
             opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        @keyframes testimonialSlideLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
           }
         }
       `}</style>

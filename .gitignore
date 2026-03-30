@@ -42,3 +42,11 @@ next-env.d.ts
 
 # agents
 .agents/
+
+# Markdown documents (design notes, etc.)
+*.md
+!README.md
+!reference_design.md
+!showroom-bento.md
+
+!Testimonials.md
