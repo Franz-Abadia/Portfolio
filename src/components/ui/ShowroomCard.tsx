@@ -13,7 +13,7 @@ export function ShowroomCard({ item }: ShowroomCardProps) {
       <div className="relative aspect-4/3 overflow-hidden bg-muted">
         <Image
           src={item.image}
-          alt={item.title}
+          alt={`Case study: ${item.title}`}
           fill
           className="object-cover object-top"
           sizes="(max-width: 768px) 90vw, 460px"

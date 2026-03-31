@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { FiPhone, FiMail } from "react-icons/fi";
-import { FaWhatsapp, FaTelegramPlane, FaLinkedin } from "react-icons/fa";
+import { FaWhatsapp, FaTelegramPlane, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 import { sendEmail } from "@/app/actions/actions";
 
@@ -44,9 +44,9 @@ export function Contact() {
       icon: <FaWhatsapp className="h-4 w-4" />,
     },
     {
-      label: "Telegram",
-      href: "https://t.me/tonyfranz",
-      icon: <FaTelegramPlane className="h-4 w-4" />,
+      label: "Instagram",
+      href: "https://www.instagram.com/abadiafranz/",
+      icon: <FaInstagram className="h-4 w-4" />,
     },
     {
       label: "LinkedIn",

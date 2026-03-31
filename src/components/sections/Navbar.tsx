@@ -80,7 +80,8 @@ export function Navbar() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="relative z-[60] flex h-10 w-10 flex-col items-center justify-center gap-1.5 focus:outline-none md:hidden"
-            aria-label="Toggle menu"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
           >
             <span className={cn(
               "h-px w-6 bg-white transition-all duration-300 ease-in-out",

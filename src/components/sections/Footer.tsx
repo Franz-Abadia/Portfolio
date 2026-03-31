@@ -14,14 +14,16 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs text-muted-foreground transition-colors hover:text-accent"
+            aria-label="Contact Franz Abadia on WhatsApp"
           >
             WhatsApp
           </a>
           <a
-            href="https://t.me/tonyfranz"
+            href="https://www.instagram.com/abadiafranz/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs text-muted-foreground transition-colors hover:text-accent"
+            aria-label="Follow Franz Abadia on Instagram"
           >
             Instagram
           </a>
@@ -30,6 +32,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs text-muted-foreground transition-colors hover:text-accent"
+            aria-label="Connect with Franz Abadia on LinkedIn"
           >
             LinkedIn
           </a>

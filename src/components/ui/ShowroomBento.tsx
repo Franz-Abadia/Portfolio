@@ -5,13 +5,13 @@ import { cn } from "@/lib/utils";
 import { HiArrowRight, HiArrowLeft, HiXMark } from "react-icons/hi2";
 
 const slideImages = [
+  "/images/results/MetaResults.png",
+  "/images/results/MetaResults2.png",
   "/images/results/result1.png",
   "/images/results/result2.png",
   "/images/results/result3.png",
   "/images/results/result4.png",
   "/images/results/result5.png",
-  "/images/results/MetaResults.png",
-  "/images/results/MetaResults2.png",
 ];
 
 export function ShowroomBento() {
