@@ -52,7 +52,7 @@ export function Video() {
     }, [selectedStory]);
 
     return (
-        <section className="relative pb-12  lg:pb-28 bg-transparent px-4 sm:px-6 lg:px-8">
+        <section className="relative pb-12 lg:pb-28 bg-transparent px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
                 <ScrollReveal>
                     <div className="mb-12 text-center md:mb-16">
