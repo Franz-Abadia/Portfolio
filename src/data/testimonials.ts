@@ -10,6 +10,7 @@ export const testimonials: Testimonial[] = [
       "Tony is the G!! I have worked with Tony for some projects and he always delivers it amazingly. His crazy good! The scripts he wrote. I simply love it.",
     avatar: "",
     image: "/images/testimonials/molu.png",
+    videoPlaybackId: "kb68fIiLM7lEtZGZn02anDSsvuCQGR9W1bkoE6zx381Y",
     logo: "/images/testimonials/logos/molu-logo.png",
     socials: ["@molu.social"],
     stars: 5,

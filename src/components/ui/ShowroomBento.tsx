@@ -10,8 +10,8 @@ const slideImages = [
   "/images/results/result3.png",
   "/images/results/result4.png",
   "/images/results/result5.png",
-  "/images/results/Metaresults.png",
-  "/images/results/Metaresults2.png",
+  "/images/results/MetaResults.png",
+  "/images/results/MetaResults2.png",
 ];
 
 export function ShowroomBento() {

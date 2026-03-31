@@ -63,7 +63,8 @@ export function Hero() {
           {/* We only wrap the text content inside ScrollReveal */}
           <ScrollReveal>
             <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-gold md:text-base">
-             If your offer is good but your words are not pulling their weight, I fix that.
+             You <span className="font-semibold italic text-gold">VALUE</span> your time, and you{" "}
+              <span className="font-semibold italic text-gold">NEED</span> a copywriter.
             </p>
 
             <h1 className="font-display text-4xl sm:text-5xl font-regular leading-[1.1] tracking-[-0.02em] text-white md:text-6xl lg:text-7xl xl:text-[4.5rem]">
@@ -79,8 +80,8 @@ export function Hero() {
             </h1>
 
             <p className="mt-3 max-w-prose text-base sm:text-lg leading-relaxed text-slate-300 md:text-xl">
-              You <span className="font-semibold italic text-gold">VALUE</span> your time, and you{" "}
-              <span className="font-semibold italic text-gold">NEED</span> a copywriter.
+              If your offer is good but your words are not pulling their weight, I fix that.
+              
             </p>
 
             {/* CTA buttons */}

@@ -1,12 +1,16 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { testimonials } from "@/data/testimonials";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+
+const MuxPlayer = dynamic(() => import("@mux/mux-player-react"), { ssr: false });
 
 export function Testimonials() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0); // -1 left, 1 right, 0 initial
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const total = testimonials.length;
 
   const goTo = useCallback(
@@ -27,11 +31,31 @@ export function Testimonials() {
     setCurrent((p) => (p - 1 + total) % total);
   }, [total]);
 
-  // Auto-advance every 7s
+  // Auto-advance every 7s - Paused when video modal is open
   useEffect(() => {
+    if (selectedVideo) return;
     const id = setInterval(next, 7000);
     return () => clearInterval(id);
-  }, [next]);
+  }, [next, selectedVideo]);
+
+  // ESC key to close modal
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedVideo(null);
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
+
+  // Prevent scrolling when modal is open
+  useEffect(() => {
+    if (selectedVideo) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => { document.body.style.overflow = "unset"; };
+  }, [selectedVideo]);
 
   const t = testimonials[current];
 
@@ -72,7 +96,7 @@ export function Testimonials() {
         {/* Carousel slide container - Stable fixed height on large screens */}
         <div className="mx-auto max-w-5xl">
           <div
-            className="grid items-center gap-8 md:gap-14 lg:items-end lg:grid-cols-[1fr_400px] lg:gap-0 lg:h-[550px]"
+            className="grid items-center gap-8 md:gap-14 lg:items-end lg:grid-cols-[1fr_400px] lg:gap-0 lg:h-[500px]"
           >
             {/* Left – Quote Card */}
             <div 
@@ -83,7 +107,7 @@ export function Testimonials() {
               }}
             >
               <div
-                className="relative rounded-2xl p-8 md:p-12 lg:h-[460px] flex flex-col justify-between z-10 lg:-mr-px"
+                className="relative rounded-2xl p-8 md:p-12 lg:h-[420px] flex flex-col justify-between z-10 lg:-mr-px"
                 style={{
                   background: "rgba(15, 23, 42, 0.65)",
                   backdropFilter: "blur(20px)",
@@ -196,16 +220,39 @@ export function Testimonials() {
                   }}
                 />
                 
-                {/* Arch shape image container */}
                 <div
-                  className="relative h-[380px] w-full max-w-[300px] md:h-[420px] md:max-w-[340px] lg:h-full lg:max-w-none lg:w-full overflow-hidden border-2 border-blue-400/15 lg:border-l-0"
+                  onClick={() => t.videoPlaybackId && setSelectedVideo(t.videoPlaybackId)}
+                  className={`relative h-full w-full max-w-[300px] md:max-w-[340px] lg:max-w-none lg:w-full overflow-hidden border-2 border-blue-400/15 lg:border-l-0 ${
+                    t.videoPlaybackId ? "cursor-pointer group/arch" : ""
+                  }`}
                   style={{
                     borderRadius: "200px 200px 24px 24px",
                     boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
                     background: "linear-gradient(135deg, #1E293B 0%, #0F172A 100%)",
+                    aspectRatio: "9/16",
+                    maxHeight: "500px",
                   }}
                 >
-                  {t.image ? (
+                  {t.videoPlaybackId ? (
+                    <>
+                      <img
+                        src={`https://image.mux.com/${t.videoPlaybackId}/thumbnail.jpg?width=600&height=1067&fit_mode=smartcrop&time=0`}
+                        alt={t.name}
+                        className="h-full w-full object-cover grayscale-[0.2] group-hover/arch:grayscale-0 group-hover/arch:scale-105 transition-all duration-700"
+                      />
+                      {/* Play Icon Overlay - Refined design */}
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover/arch:bg-black/20 transition-colors">
+                        <div className="w-14 h-14 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center transform scale-90 group-hover/arch:scale-100 transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+                          <svg
+                            className="w-7 h-7 text-white/90 translate-x-0.5 fill-current"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </div>
+                      </div>
+                    </>
+                  ) : t.image ? (
                     <img
                       src={t.image}
                       alt={t.name}
@@ -232,8 +279,7 @@ export function Testimonials() {
         </div>
 
         {/* Navigation */}
-        <ScrollReveal delay={200}>
-          <div className="mt-12 flex items-center justify-center gap-6 md:mt-16">
+        <div className="mt-12 flex items-center justify-center gap-6 md:mt-16 relative z-20">
             {/* Prev arrow */}
             <button
               onClick={prev}
@@ -295,8 +341,41 @@ export function Testimonials() {
               </svg>
             </button>
           </div>
-        </ScrollReveal>
       </div>
+      
+      {/* Video Modal Player - Consistent with Video section */}
+      {selectedVideo && (
+        <div
+          className="fixed inset-0 z-100 flex items-center justify-center bg-black/95 backdrop-blur-md p-4 sm:p-8"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <div
+            className="relative w-full max-w-[500px] max-h-[90vh] aspect-9/16 bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white hover:bg-black/60 transition-colors border border-white/10 shadow-lg"
+              onClick={() => setSelectedVideo(null)}
+              aria-label="Close video"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <MuxPlayer
+              playbackId={selectedVideo}
+              metadataVideoTitle="Client Testimonial"
+              className="h-full w-full object-cover shadow-2xl"
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              autoPlay
+              accentColor="#60a5fa"
+            />
+          </div>
+        </div>
+      )}
+
 
       {/* Keyframes */}
       <style jsx>{`

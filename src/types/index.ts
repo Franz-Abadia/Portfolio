@@ -14,6 +14,7 @@ export interface Testimonial {
   logo?: string;
   socials?: string[];
   website?: string;
+  videoPlaybackId?: string;
   metric?: string;
   stars: number;
 }
