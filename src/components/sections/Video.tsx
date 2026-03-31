@@ -21,7 +21,7 @@ const stories: Story[] = [
     { id: 4, playbackId: "NzPAbRKdrZTAPCn01BHAFf2Aj7PTXQQiSiVwkcL3027u00", thumbnailTime: 1.3, views: "561K", category: "Reel" },
     { id: 6, playbackId: "00OZ2dkwYR8PWD2NCRp00pGIhyZMnxkRWB017Ktzn5XrE00", thumbnailTime: 2.3, views: "427K", category: "Reel" },
     { id: 7, playbackId: "caELhbFuaqRImZuSatYUxtMeM24yMv9WZj23dD00jAD00", thumbnailTime: 5.6, views: "171K", category: "Reel" },
-    { id: 3, playbackId: "m2c00UKw4OL3RO1WuuKZYoINHbQf4Rzic2er6JxSSavE", thumbnailTime: 1.5, views: "2.1K", category: "Reel" },
+    { id: 3, playbackId: "fIHApKoir89bcoNYrBdWUSgCEnlfYA101oNHptAIM1xo", thumbnailTime: 1.5, views: "133K", category: "Reel" },
     { id: 1, playbackId: "HWetRi5hqgQFsS4hEAMtNRh00fIOvebnLjD3ytAAwq88", thumbnailTime: 5, category: "Ad Creative" },
     { id: 8, playbackId: "CPeqj2lAqBdkiP6ZDExovt3g6nq89OmW3zmq3xqqfOk", thumbnailTime: 0, category: "Ad Creative" },
     { id: 9, playbackId: "NVulNz2urS902pAMihkXamLz02JX4C5mA02Q5jaNs5JAMM", thumbnailTime: 0, category: "Ad Creative" },

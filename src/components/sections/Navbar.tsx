@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
   { label: "Portfolio", href: "/#showroom" },
+  { label: "About", href: "/about" },
 ];
 
 export function Navbar() {
@@ -42,7 +42,7 @@ export function Navbar() {
           href="/"
           className="font-display text-3xl italic tracking-tight text-white transition-opacity hover:opacity-80"
         >
-          Tony
+          <span className="text-gold">Tony</span>writes
         </Link>
 
         {/* Center: Desktop Links */}

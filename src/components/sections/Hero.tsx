@@ -63,8 +63,7 @@ export function Hero() {
           {/* We only wrap the text content inside ScrollReveal */}
           <ScrollReveal>
             <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-gold md:text-base">
-             You <span className="font-semibold italic text-gold">VALUE</span> your time, and you{" "}
-              <span className="font-semibold italic text-gold">NEED</span> a copywriter.
+             You need a <span className="font-semibold italic text-gold">copywriter</span> and value your time?
             </p>
 
             <h1 className="font-display text-4xl sm:text-5xl font-regular leading-[1.1] tracking-[-0.02em] text-white md:text-6xl lg:text-7xl xl:text-[4.5rem]">
