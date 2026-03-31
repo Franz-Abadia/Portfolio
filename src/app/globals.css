@@ -299,7 +299,6 @@ body {
   z-index: 0;
 }
 
-/* ── Blueprint Markings ── */
 .blueprint-marking {
   font-family: var(--font-inter), sans-serif;
   font-size: 8px;
@@ -308,4 +307,14 @@ body {
   pointer-events: none;
   user-select: none;
   text-transform: uppercase;
+}
+
+/* ── Hide Scrollbar Utility ── */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
