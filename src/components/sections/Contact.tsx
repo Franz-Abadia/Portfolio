@@ -96,10 +96,7 @@ export function Contact() {
                   className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white"
                   style={{ lineHeight: 1.05 }}
                 >
-                  Let&apos;s write your story{" "}
-                  <span className="font-light italic" style={{ color: "rgba(252,211,77,0.9)" }}>
-                    for the centuries.
-                  </span>
+                  Work with a <span className="font-light italic text-gold">result driven copywriter</span> today.
                 </h2>
 
                 <p className="mt-6 max-w-sm text-base text-slate-400">

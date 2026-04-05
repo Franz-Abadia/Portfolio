@@ -39,7 +39,7 @@ export function Footer() {
         </div>
 
         <p className="text-xs text-muted-foreground">
-          © {year} Franz Abadia. All rights reserved.
+          © {year} Tonywrites. All rights reserved.
         </p>
       </div>
     </footer>

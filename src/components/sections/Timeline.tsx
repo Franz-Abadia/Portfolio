@@ -3,11 +3,11 @@
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const timelineNodes = [
-  { label: "1. Website Copy", pos: "top" },
-  { label: "2. Ad Scripts & Creative", pos: "bottom" },
-  { label: "3. Email Copy", pos: "top" },
-  { label: "4. Brand Messaging", pos: "bottom" },
-  { label: "5. Copy Audits", pos: "top" },
+  { label: "1. The Research", pos: "top" },
+  { label: "2. Concluding Information", pos: "bottom" },
+  { label: "3. The Writing", pos: "top" },
+  { label: "4. Proofreading", pos: "bottom" },
+  { label: "5. Submission", pos: "top" },
 ];
 
 export function CopySecret() {
